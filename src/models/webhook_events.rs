@@ -1278,7 +1278,7 @@ mod tests {
 
     #[test]
     fn deserialize_ping_with_valid_signature() {
-        use hmac::Mac;
+        use hmac::{KeyInit, Mac};
         let json = include_str!("../../tests/resources/ping_webhook_event.json");
         let secret = "my_secret_token";
         let mut mac = hmac::Hmac::<sha2::Sha256>::new_from_slice(secret.as_bytes()).unwrap();

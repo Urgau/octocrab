@@ -76,7 +76,7 @@
 //! assert_eq!(event.kind, WebhookEventType::Ping);
 //! ```
 
-use hmac::{Hmac, Mac};
+use hmac::{Hmac, KeyInit, Mac};
 use sha2::Sha256;
 use snafu::Snafu;
 
